@@ -13,6 +13,6 @@ public class Cliente {
         Coordenadas coordenadasSalida = new Coordenadas(Scanner.getDouble("Punto de Salida Eje X: "), Scanner.getDouble("Punto de Salida Eje Y: "));
         Coordenadas coordenadasLlegada = new Coordenadas(Scanner.getDouble("Punto de Llegada Eje X: "), Scanner.getDouble("Punto de Llegada Eje Y: "));
     }
-
+//probando arre loco
 
 }
