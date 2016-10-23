@@ -9,18 +9,20 @@ public class Chofer {
     private double ejeX;
     private double ejeY;
     private Coordenadas coordenadas = new Coordenadas(ejeX,ejeY);
-    private int tipoDeAuto;
-    private int cantidadPasajeros;
+    private Auto auto;
+    EstadoChofer estado;
 
 
-    public Chofer(){
+    public Chofer() throws Exception {
         name = Scanner.getString("Nombre del chofer: ");
         ejeX = Scanner.getDouble("Coordenadas en x: ");
         ejeY = Scanner.getDouble("Coordenadas en y: ");
         isAvailable = true;
-        tipoDeAuto = Scanner.getInt("Ingrese el tipo de auto: \n Sabiendo que 1 es muy bueno, 2 es bueno y 3 es regular: ");
-        cantidadPasajeros = Scanner.getInt("Cantidad de pasajeros que permite: ");
+        auto = new Auto();
+        estado = new Offline(this);
     }
 
-
+    public void setEstado(EstadoChofer nuevoEstado){
+        estado = nuevoEstado;
+    }
 }
