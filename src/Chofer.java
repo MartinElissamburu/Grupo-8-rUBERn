@@ -5,6 +5,8 @@ import java.util.ArrayList;
  */
 public class Chofer {
     private String name;
+    //long dni
+    //tarjeta de credito
     private boolean isAvailable;
     private double ejeX;
     private double ejeY;
@@ -25,4 +27,7 @@ public class Chofer {
     public void setEstado(EstadoChofer nuevoEstado){
         estado = nuevoEstado;
     }
+
+    //public void actualizar cooordenadas
+    //public void getname, getTarjeta
 }
