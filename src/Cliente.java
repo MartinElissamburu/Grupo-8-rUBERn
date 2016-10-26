@@ -9,7 +9,7 @@ public class Cliente {
     public Cliente() throws Exception {
         name = Scanner.getString("Nombre del usuario: ");
         dni = Scanner.getLong("Dni del usuario: ");
-        this.tarjeta = new TarjetaDeCredito(Scanner.getLong("Ingrese numero de tarjeta: "));
+        this.tarjeta = new TarjetaDeCredito();
     }
 
     public void pedirViaje(){

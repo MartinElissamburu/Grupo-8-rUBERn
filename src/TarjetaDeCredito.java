@@ -5,17 +5,25 @@ public class TarjetaDeCredito {
     private long creditNumber;
     private double saldo;
 
-    public TarjetaDeCredito(long creditNumber) throws Exception {
-        String creditNumber1 = String.valueOf(creditNumber);
-        boolean tarjeta16 = true;
-        while(tarjeta16){
-            if (creditNumber1.length() != 16){
-                throw new RuntimeException("Numero de Tarjeta invalido, debe tener 16 digitos");
-            }else{
-                this.creditNumber = creditNumber;
-                tarjeta16 = false;
+    public TarjetaDeCredito() throws Exception {
+        boolean numeroIn = false;
+        do{
+            try{
+                long creditNumber = Scanner.getLong("Ingrese numero de tarjeta: ");
+                String creditNumber1 = String.valueOf(creditNumber);
+                numeroIn = true;
+                if (creditNumber1.length() != 16){
+
+                    throw new RuntimeException("Numero de Tarjeta invalido, debe tener 16 digitos");
+                }else{
+                    this.creditNumber = creditNumber;
+                    numeroIn = false;
+                }
+            }catch(RuntimeException e){
+                System.out.println("Numero de tarjeta invalido, debe tener 16 digitos");
+
             }
-        }//hay que hacer que el codigo siga
+        }while(numeroIn);
     }
 
     public long getCreditNumber(){
