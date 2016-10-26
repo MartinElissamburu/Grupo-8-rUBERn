@@ -5,16 +5,17 @@ public class menuChoferes extends formulario{
     @Override
     protected void displayContent() throws Exception {
         System.out.println("---------\n"+
-                "1. Lista de choferes y datos"+
-                "2. Estado de choferes"+
-                "3. Agregar choferes"+
-                "4. Borrar choferes" +
+                "1. Lista de choferes y datos\n"+
+                "2. Estado de choferes\n"+
+                "3. Agregar choferes\n"+
+                "4. Borrar choferes\n" +
                 "5. Volver atras\n");
 
         int j = Scanner.getInt("Que operacion desea realizar: ");
         int i = 0;
         switch(j){
             case 1:
+
                 //accede al array list de choferes y los imprime
                 i = 0;
                 break;
@@ -38,7 +39,7 @@ public class menuChoferes extends formulario{
 
                 break;
             case 5:
-                clearScreen();
+
                 i = 0;
                 break;
             default:

@@ -6,15 +6,16 @@ public class menuUsuarios extends formulario {
     @Override
     protected void displayContent() throws Exception {
         System.out.println("---------\n"+
-                "1. Lista de usuarios y datos"+
-                "2. Agregar usuario"+
-                "3. Borrar usuario" +
+                "1. Lista de usuarios y datos\n"+
+                "2. Agregar usuario\n"+
+                "3. Borrar usuario\n" +
                 "4. Volver atras\n");
 
         int j = Scanner.getInt("Que operacion desea realizar: ");
         int i = 0;
         switch(j){
             case 1:
+                //usuarios.getClientes();
                 //accede al array list de usuarios y los imprime
                 i = 0;
                 break;
@@ -35,7 +36,6 @@ public class menuUsuarios extends formulario {
                 i = 0;
                 break;
             case 4:
-                clearScreen();
                 i = 0;
                 break;
             default:

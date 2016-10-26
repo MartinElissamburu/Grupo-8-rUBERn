@@ -4,7 +4,9 @@
  */
 public class menuPrincipal extends formulario {
     @Override
-    protected void displayContent() {
+
+    protected void displayContent() throws Exception {
+        clearScreen();
         while (true) {
 
             System.out.println("------------\n" +
@@ -23,12 +25,14 @@ public class menuPrincipal extends formulario {
                     impresion2 = 9999999;
                     break;
                 case 2:
-                    new menuChoferes();
+                    new menuChoferes().displayTitle();
+                    new menuChoferes().displayContent();
                     impresion = "nada";
                     impresion2 = 9999999;
                     break;
                 case 3:
-                    new menuUsuarios();
+                    new menuUsuarios().displayTitle();
+                    new menuUsuarios().displayContent();
                     impresion = "nada";
                     impresion2 = 9999999;
                     break;
@@ -52,7 +56,7 @@ public class menuPrincipal extends formulario {
                 }
             }
             System.out.println("\n");
-            int limpiar = Scanner.getInt("Si desea limpiar la consola ingrese 1, si desea que la consola quede sin limpiar ingrese 2 y si desea salir ingrese 3");
+            int limpiar = Scanner.getInt("Si desea limpiar la consola ingrese 1, si desea que la consola quede sin limpiar ingrese 2 y si desea salir ingrese 3: ");
             if (limpiar == 1){
                 clearScreen();
             }
