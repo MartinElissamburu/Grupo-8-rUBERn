@@ -15,7 +15,7 @@ public class menuUsuarios extends formulario {
         int i = 0;
         switch(j){
             case 1:
-                //usuarios.getClientes();
+
                 //accede al array list de usuarios y los imprime
                 i = 0;
                 break;

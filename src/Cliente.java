@@ -5,11 +5,13 @@ public class Cliente {
     private String name;
     private long dni;
     private TarjetaDeCredito tarjeta;
+    private long numeroClientes = 0;
 
     public Cliente() throws Exception {
         name = Scanner.getString("Nombre del usuario: ");
         dni = Scanner.getLong("Dni del usuario: ");
         this.tarjeta = new TarjetaDeCredito();
+        numeroClientes ++;
     }
 
     public void pedirViaje(){
@@ -34,5 +36,14 @@ public class Cliente {
 
     public long getCreditNumber(){
         return tarjeta.getCreditNumber();
+    }
+
+    @Override
+    public String toString() {
+        String name = this.name;
+        String dni = String.valueOf(this.dni);
+        String tarjetaCredito = String.valueOf(this.tarjeta);
+        String cliente = "Nombre: " + name + "\n" + "Dni: " + dni + "\n" + "Numero de Tarjeta de Credito: " + tarjetaCredito + "\n";
+        return cliente;
     }
 }
