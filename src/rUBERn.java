@@ -11,12 +11,12 @@ public class rUBERn {
         ArrayList<Chofer> choferes = new ArrayList<>();
         ArrayList<Cliente> clientes = new ArrayList<>();
 
-        int cantidadChoferes = Scanner.getInt("Cuantos Choferes desea: ");
+        int cantidadChoferes = Scanner.getInt("Cuantos choferes desea: ");
         for (int i = 0; i < cantidadChoferes; i++) {
             Chofer chofer = new Chofer();
             choferes.add(i, chofer);
         }
-        int cantidadUsuarios = Scanner.getInt("Cuantos Usuarios desea: ");
+        int cantidadUsuarios = Scanner.getInt("Cuantos usuarios desea: ");
         for (int i = 0; i < cantidadUsuarios; i++) {
             Cliente cliente = new Cliente();
             clientes.add(i, cliente);
@@ -28,8 +28,8 @@ public class rUBERn {
             System.out.println("------------\n" +
                     "Que operacion desea realizar:\n" +
                     "1. Realizar un viaje\n" +
-                    "2. Enunciar Choferes\n" +
-                    "3. Enunciar Usuarios\n" +
+                    "2. Enunciar choferes\n" +
+                    "3. Enunciar usuarios\n" +
                     "4. Salir\n");
             String impresion = null;
             int impresion2 = 888888;

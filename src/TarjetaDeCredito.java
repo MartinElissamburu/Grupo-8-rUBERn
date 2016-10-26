@@ -3,8 +3,7 @@
  */
 public class TarjetaDeCredito {
     private long creditNumber;
-    private long saldo;
-
+    private double saldo;
 
     public TarjetaDeCredito(long creditNumber) throws Exception {
         String creditNumber1 = String.valueOf(creditNumber);
@@ -17,8 +16,13 @@ public class TarjetaDeCredito {
                 tarjeta16 = false;
             }
         }//hay que hacer que el codigo siga
-
     }
 
+    public long getCreditNumber(){
+        return creditNumber;
+    }
 
+    public double getSaldo(){
+        return saldo;
+    }
 }

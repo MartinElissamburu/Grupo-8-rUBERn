@@ -3,11 +3,12 @@
  */
 public class Cliente {
     private String name;
-    //long dni
+    private long dni;
     private TarjetaDeCredito tarjeta;
 
     public Cliente() throws Exception {
-        name = Scanner.getString("Nombre del Usuario: ");
+        name = Scanner.getString("Nombre del usuario: ");
+        dni = Scanner.getLong("Dni del usuario: ");
         this.tarjeta = new TarjetaDeCredito(Scanner.getLong("Ingrese numero de tarjeta: "));
     }
 
@@ -20,6 +21,18 @@ public class Cliente {
         Coordenadas coordenadasLlegada = new Coordenadas(llegadaX,llegadaY);
         int cantidadDePasajeros = Scanner.getInt("Cuantos pasajeros van a viajar: ");
         double distancia = Math.sqrt(Math.pow(salidaX-llegadaX,2)+Math.pow(salidaY-llegadaY,2));
-        double costo = (distancia/100)+ 15 ;
+        double costo = (distancia/100)+ 15; //multiplicado por el costo de imagen
+    }
+
+    public long getDni(){
+        return dni;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public long getCreditNumber(){
+        return tarjeta.getCreditNumber();
     }
 }

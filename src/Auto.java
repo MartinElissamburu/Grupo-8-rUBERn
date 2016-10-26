@@ -30,7 +30,7 @@ public class Auto {
     }
 
     public int setTipoDeAuto(){
-        tipoDeAuto = Scanner.getInt("Ingrese el tipo de auto\n Sabiendo que 1 es muy bueno, 2 es bueno y 3 es regular: ");
+        tipoDeAuto = Scanner.getInt("Ingrese el tipo de auto\nSabiendo que 1 es muy bueno, 2 es bueno y 3 es regular: ");
         return tipoDeAuto;
     }
     public double getCapacidad(){
@@ -40,5 +40,4 @@ public class Auto {
     public int getTipoDeAuto(){
         return tipoDeAuto;
     }
-
 }

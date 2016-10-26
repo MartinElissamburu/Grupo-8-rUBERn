@@ -5,8 +5,8 @@ import java.util.ArrayList;
  */
 public class Chofer {
     private String name;
-    //long dni
-    //tarjeta de credito
+    private long dni;
+    private TarjetaDeCredito tarjeta;
     private boolean isAvailable;
     private double ejeX;
     private double ejeY;
@@ -28,6 +28,28 @@ public class Chofer {
         estado = nuevoEstado;
     }
 
-    //public void actualizar cooordenadas
-    //public void getname, getTarjeta
+    public Coordenadas actualizarCoordenadas(long newX, long newY){
+        coordenadas = new Coordenadas(newX,newY);
+        return coordenadas;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public long getDni(){
+        return dni;
+    }
+
+    public long getCreditNumber(){
+        return tarjeta.getCreditNumber();
+    }
+
+    public double getCapacidad(){
+        return auto.getCapacidad();
+    }
+
+    public double getTipoDeAuto(){
+        return auto.getTipoDeAuto();
+    }
 }
