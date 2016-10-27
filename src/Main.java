@@ -1,12 +1,7 @@
-
-
-import java.util.ArrayList;
-
 /**
- * Created by Tincho on 12-Oct-16.
+ * Created by Tincho on 27-Oct-16.
  */
-public class rUBERn {
-
+public class Main {
     public static void main(String[] args) throws Exception {
 
         CrearChoferes choferes = new CrearChoferes();
@@ -14,8 +9,6 @@ public class rUBERn {
         new menuPrincipal().displayTitle();
         new menuPrincipal().displayContent();
 
+
     }
 }
-
-
-

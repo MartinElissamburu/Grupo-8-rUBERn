@@ -17,6 +17,7 @@ public class Chofer {
 
     public Chofer() throws Exception {
         name = Scanner.getString("Nombre del chofer: ");
+        dni = Scanner.getLong("Numero de documento: ");
         ejeX = Scanner.getDouble("Coordenadas en x: ");
         ejeY = Scanner.getDouble("Coordenadas en y: ");
         isAvailable = true;

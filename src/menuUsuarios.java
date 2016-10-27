@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by Tincho on 25-Oct-16.
  */
@@ -43,6 +45,7 @@ public class menuUsuarios extends formulario {
 
         }
     }
+
 
     @Override
     protected void displayTitle() {

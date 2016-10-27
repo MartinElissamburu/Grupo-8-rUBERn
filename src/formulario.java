@@ -10,6 +10,7 @@ public abstract class formulario {
         displayContent();
     }
 
+
     protected abstract void displayContent() throws Exception;
 
     protected abstract void displayTitle();
