@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -19,6 +20,7 @@ public class Factura {
     private long tarjetaDeCredito;
     private String descripcion;
     private double costo;
+    private ArrayList<Factura> facturas;
 
     public Factura(){
         numeroDeTransaccion = 0;
@@ -40,5 +42,17 @@ public class Factura {
         }
         //costo = hacerviaje.getCosto()
         numeroDeTransaccion++;
+        facturas.add(this);
+    }
+
+    public void imprimirFacturas(){
+        for(int i = 0; i < facturas.size(); i++){
+            System.out.println(facturas.get(i).numeroDeTransaccion);
+            System.out.println(facturas.get(i).tipoDeOperacion);
+            System.out.println(facturas.get(i).fecha);
+            System.out.println(facturas.get(i).tarjetaDeCredito);
+            System.out.println(facturas.get(i).descripcion);
+            System.out.println(facturas.get(i).costo);
+        }
     }
 }
