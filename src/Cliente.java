@@ -34,8 +34,14 @@ public class Cliente {
         return name;
     }
 
-    public long getCreditNumber(){
+    public long getTarjeta(){
         return tarjeta.getCreditNumber();
+    }
+
+    public void getDatos(){
+        System.out.println(this.getName());
+        System.out.println(this.getDni());
+        System.out.println(this.getTarjeta());
     }
 
     @Override

@@ -21,6 +21,7 @@ public class MenuPrincipal extends Formulario {
             switch (j) {
                 case 1:
                     //preguntar con que cliente desea viajar y crear el algoritmo de busqueda de viaje, podria ser otro metodo
+                    //al final del viaje se crea una nueva factura
                     impresion = "nada";
                     impresion2 = 9999999;
                     break;

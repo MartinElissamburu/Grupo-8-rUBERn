@@ -12,7 +12,7 @@ public class Chofer {
     private double ejeY;
     private Coordenadas coordenadas = new Coordenadas(ejeX,ejeY);
     private Auto auto;
-    EstadoChofer estado;
+    private EstadoChofer estado;
 
 
     public Chofer() throws Exception {
@@ -42,7 +42,7 @@ public class Chofer {
         return dni;
     }
 
-    public long getCreditNumber(){
+    public long getTarjeta(){
         return tarjeta.getCreditNumber();
     }
 
@@ -52,5 +52,15 @@ public class Chofer {
 
     public double getTipoDeAuto(){
         return auto.getTipoDeAuto();
+    }
+
+    public String getEstado(){
+        return estado.toString();
+    }
+
+    public void getDatos(){
+        System.out.println(this.getName());
+        System.out.println(this.getDni());
+        System.out.println(this.getTarjeta());
     }
 }

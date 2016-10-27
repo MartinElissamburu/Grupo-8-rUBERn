@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 /**
  * Created by Tincho on 25-Oct-16.
  */
 public class MenuChoferes extends Formulario {
+    private ArrayList<Chofer> choferes;
     @Override
     protected void displayContent() throws Exception {
         System.out.println("---------\n"+
@@ -15,28 +18,32 @@ public class MenuChoferes extends Formulario {
         int i = 0;
         switch(j){
             case 1:
-
-                //accede al array list de choferes y los imprime
+                for(int k = 0; k < choferes.size(); k++){
+                    choferes.get(k).getDatos();
+                }
                 i = 0;
                 break;
             case 2:
-                int cantidadChoferes = Scanner.getInt("Cuantos usuarios desea agregar: ");
-                for (int o = 0; o<cantidadChoferes; o++){
-                    Chofer chofer = new Chofer();
-                    //agregar este chofer a la lista de choferes
+                for(int k = 0; k < choferes.size(); k++){
+                    choferes.get(k).getEstado();
                 }
                 i = 0;
                 break;
             case 3:
-                //aca escribo la lista de choferes
-                int choferABorrar = Scanner.getInt("Escriba el documento del chofer a borrar(en caso de no haber chofer con este documento volvera al menu principal): ");
-                Chofer borrar;
-                //recorro el arraylist de choferes y me fijo en cada chofer si el documento es igual
+                new CrearChoferes();
+                // o Chofer chofer = new Chofer() ??
                 //al ingresado o no, en caso de no haber ningun documento igual vuelvo al menu anterior
                 i = 0;
                 break;
             case 4:
-
+                int choferABorrar = Scanner.getInt("Escriba el documento del chofer a borrar(en caso de no haber " +
+                        "chofer con este documento volvera al menu principal): ");
+                for(int k = 0; k < choferes.size(); k++){
+                    if(choferes.get(k).getDni() == choferABorrar){
+                        choferes.remove(k);
+                        //hacer un try and catch en caso que el dni que nos pase no corresponda a ningun chofer
+                    }
+                }
                 break;
             case 5:
 

@@ -17,6 +17,4 @@ public class CrearChoferes {
     public ArrayList<Chofer> getChoferes() {
         return choferes;
     }
-
-
 }
