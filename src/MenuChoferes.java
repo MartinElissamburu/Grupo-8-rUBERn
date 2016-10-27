@@ -1,7 +1,7 @@
 /**
  * Created by Tincho on 25-Oct-16.
  */
-public class menuChoferes extends formulario{
+public class MenuChoferes extends Formulario {
     @Override
     protected void displayContent() throws Exception {
         System.out.println("---------\n"+

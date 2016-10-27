@@ -1,7 +1,7 @@
 /**
  * Created by Tincho on 21-Oct-16.
  */
-public abstract class formulario {
+public abstract class Formulario {
 
     public void show() throws Exception {
         clearScreen();

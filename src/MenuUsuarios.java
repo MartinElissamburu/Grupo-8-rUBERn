@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-
 /**
  * Created by Tincho on 25-Oct-16.
  */
-public class menuUsuarios extends formulario {
+public class MenuUsuarios extends Formulario {
 
     @Override
     protected void displayContent() throws Exception {

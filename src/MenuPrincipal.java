@@ -2,7 +2,7 @@
 /**
  * Created by Tincho on 21-Oct-16.
  */
-public class menuPrincipal extends formulario {
+public class MenuPrincipal extends Formulario {
     @Override
 
     protected void displayContent() throws Exception {
@@ -25,14 +25,14 @@ public class menuPrincipal extends formulario {
                     impresion2 = 9999999;
                     break;
                 case 2:
-                    new menuChoferes().displayTitle();
-                    new menuChoferes().displayContent();
+                    new MenuChoferes().displayTitle();
+                    new MenuChoferes().displayContent();
                     impresion = "nada";
                     impresion2 = 9999999;
                     break;
                 case 3:
-                    new menuUsuarios().displayTitle();
-                    new menuUsuarios().displayContent();
+                    new MenuUsuarios().displayTitle();
+                    new MenuUsuarios().displayContent();
                     impresion = "nada";
                     impresion2 = 9999999;
                     break;

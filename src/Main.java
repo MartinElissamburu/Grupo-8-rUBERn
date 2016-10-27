@@ -6,8 +6,8 @@ public class Main {
 
         CrearChoferes choferes = new CrearChoferes();
         CrearUsuarios usuarios = new CrearUsuarios();
-        new menuPrincipal().displayTitle();
-        new menuPrincipal().displayContent();
+        new MenuPrincipal().displayTitle();
+        new MenuPrincipal().displayContent();
 
 
     }
