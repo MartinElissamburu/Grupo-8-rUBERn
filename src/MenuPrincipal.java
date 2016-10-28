@@ -16,7 +16,6 @@ public class MenuPrincipal extends Formulario {
     }
 
     protected void displayContent() throws Exception {
-        clearScreen();
         while (true) {
 
             System.out.println("------------\n" +
@@ -95,6 +94,8 @@ public class MenuPrincipal extends Formulario {
 
 
     protected void displayTitle() {
+        clearScreen();
         System.out.println("Bienvenido a rUBERn");
+
     }
 }
