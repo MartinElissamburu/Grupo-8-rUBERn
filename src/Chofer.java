@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Chofer {
     private String name;
     private long dni;
-    private TarjetaDeCredito tarjeta;
+    private static TarjetaDeCredito tarjeta;
     private boolean isAvailable;
     private double ejeX;
     private double ejeY;
@@ -20,6 +20,7 @@ public class Chofer {
         dni = Scanner.getLong("Numero de documento: ");
         ejeX = Scanner.getDouble("Coordenadas en x: ");
         ejeY = Scanner.getDouble("Coordenadas en y: ");
+        this.tarjeta = new TarjetaDeCredito();
         isAvailable = true;
         auto = new Auto();
         estado = new Offline(this);
@@ -42,7 +43,7 @@ public class Chofer {
         return dni;
     }
 
-    public long getTarjeta(){
+    public static long getTarjeta(){
         return tarjeta.getCreditNumber();
     }
 

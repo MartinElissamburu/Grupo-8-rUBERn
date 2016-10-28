@@ -13,7 +13,7 @@ public class Offline implements EstadoChofer {
     }
 
     public void goOffline() throws Exception {
-        throw new Exception("Ya esta offline");
+        throw new Exception("Ya esta offline"); //hacer try and catch en todas las clases
     }
 
     public void goWorking(){

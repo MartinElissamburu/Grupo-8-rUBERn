@@ -4,7 +4,7 @@
 public class Cliente {
     private String name;
     private long dni;
-    private TarjetaDeCredito tarjeta;
+    private static TarjetaDeCredito tarjeta;
     private long numeroClientes = 0;
 
     public Cliente() throws Exception {
@@ -34,7 +34,7 @@ public class Cliente {
         return name;
     }
 
-    public long getTarjeta(){
+    public static long getTarjeta(){
         return tarjeta.getCreditNumber();
     }
 

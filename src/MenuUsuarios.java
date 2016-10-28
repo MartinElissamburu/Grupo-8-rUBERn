@@ -27,9 +27,7 @@ public class MenuUsuarios extends Formulario {
                 int cantidadUsuarios = Scanner.getInt("Cuantos usuarios desea agregar: ");
                 for (int o = 0; o<cantidadUsuarios; o++){
                     Cliente cliente = new Cliente();
-                    clientes.add(o, cliente);
-                    // o new crearChoferes() ??
-                    //agregar este cliente a la lista de clientes
+                    clientes.add(cliente);
                 }
                 i = 0;
                 break;

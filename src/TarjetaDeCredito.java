@@ -9,7 +9,7 @@ public class TarjetaDeCredito {
         boolean numeroIn = false;
         do{
             try{
-                long creditNumber = Scanner.getLong("Ingrese numero de tarjeta: ");
+                long creditNumber = Scanner.getLong("Ingrese numero de tarjeta (requerido 16 digitos): ");
                 String creditNumber1 = String.valueOf(creditNumber);
                 numeroIn = true;
                 if (creditNumber1.length() != 16){

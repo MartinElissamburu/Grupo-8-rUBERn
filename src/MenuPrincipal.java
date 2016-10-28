@@ -1,8 +1,16 @@
+import java.util.ArrayList;
 
 /**
  * Created by Tincho on 21-Oct-16.
  */
 public class MenuPrincipal extends Formulario {
+    private ArrayList<Chofer> choferes;
+    private ArrayList<Cliente> clientes;
+
+    public MenuPrincipal(ArrayList<Chofer> choferes, ArrayList<Cliente> clientes){
+        this.choferes = choferes;
+        this.clientes = clientes;
+    }
     @Override
 
     protected void displayContent() throws Exception {
@@ -26,8 +34,8 @@ public class MenuPrincipal extends Formulario {
                     impresion2 = 9999999;
                     break;
                 case 2:
-                    new MenuChoferes().displayTitle();
-                    new MenuChoferes().displayContent();
+                    new MenuChoferes(choferes).displayTitle();
+                    new MenuChoferes(choferes).displayContent();
                     impresion = "nada";
                     impresion2 = 9999999;
                     break;

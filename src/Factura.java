@@ -31,9 +31,9 @@ public class Factura {
         }
         //fecha = Date.from();
         if(tipoDeOperacion.equals("Cobro")){
-            //tarjetaDeCredito = Cliente.getTarjeta();
+            tarjetaDeCredito = Cliente.getTarjeta();
         } else {
-            //tarjetaDeCredito = Chofer.getTarjeta();
+            tarjetaDeCredito = Chofer.getTarjeta();
         }
         if(tipoDeOperacion.equals("Cobro")){
             descripcion = "Cobro a un cliente por un viaje";
