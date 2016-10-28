@@ -3,7 +3,7 @@
  */
 public class Auto {
     private double capacidad;
-    private int tipoDeAuto;
+    private int tipoDeAuto; //clase nombre y coeficiente
     private double costoAdicional; //cuanto mejor el auto mas caro el viaje
 
     public Auto() throws Exception {
