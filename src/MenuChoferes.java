@@ -3,14 +3,13 @@ import java.util.ArrayList;
 /**
  * Created by Tincho on 25-Oct-16.
  */
-public class MenuChoferes extends Formulario {
+public class MenuChoferes {
     private ArrayList<Chofer> choferes;
 
     public MenuChoferes(ArrayList<Chofer> choferes){
         this.choferes = choferes;
     }
 
-    @Override
     protected void displayContent() throws Exception {
         System.out.println("---------\n"+
                 "1. Lista de choferes y datos\n"+
@@ -97,7 +96,6 @@ public class MenuChoferes extends Formulario {
         }
     }
 
-    @Override
     protected void displayTitle() {
         System.out.println("Menu Choferes");
     }

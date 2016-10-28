@@ -1,3 +1,5 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,20 +18,20 @@ public class Factura {
 
     private int numeroDeTransaccion;
     private String tipoDeOperacion;
-    private Date fecha;
+    private String fecha;
     private long tarjetaDeCredito;
     private String descripcion;
     private double costo;
     private ArrayList<Factura> facturas;
 
-    public Factura(){
+    public Factura(double costo, ArrayList<Factura> facturas){
         numeroDeTransaccion = 0;
         if(costo > 0){ //cobro, uber gana plata
             tipoDeOperacion = "Cobro";
         } else {
             tipoDeOperacion = "Pago";
         }
-        //fecha = Date.from();
+        fecha = this.getFecha();
         if(tipoDeOperacion.equals("Cobro")){
             tarjetaDeCredito = Cliente.getTarjeta();
         } else {
@@ -40,8 +42,9 @@ public class Factura {
         } else {
             descripcion = "Pago a un chofer por un viaje";
         }
-        //costo = hacerviaje.getCosto()
+        this.costo = costo;
         numeroDeTransaccion++;
+        this.facturas = facturas;
         facturas.add(this);
     }
 
@@ -54,5 +57,11 @@ public class Factura {
             System.out.println(facturas.get(i).descripcion);
             System.out.println(facturas.get(i).costo);
         }
+    }
+
+    private String getFecha() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 }

@@ -3,9 +3,13 @@ import java.util.ArrayList;
 /**
  * Created by Tincho on 25-Oct-16.
  */
-public class MenuUsuarios extends Formulario {
+public class MenuUsuarios{
     private ArrayList<Cliente> clientes;
-    @Override
+
+    public MenuUsuarios(ArrayList<Cliente> clientes){
+        this.clientes = clientes;
+    }
+
     protected void displayContent() throws Exception {
         System.out.println("---------\n"+
                 "1. Lista de usuarios y datos\n"+
@@ -52,7 +56,6 @@ public class MenuUsuarios extends Formulario {
     }
 
 
-    @Override
     protected void displayTitle() {
         System.out.println("Menu Usuarios");
     }

@@ -6,6 +6,7 @@ public class Cliente {
     private long dni;
     private static TarjetaDeCredito tarjeta;
     private long numeroClientes = 0;
+    private double costo;
 
     public Cliente() throws Exception {
         name = Scanner.getString("Nombre del usuario: ");
@@ -23,7 +24,8 @@ public class Cliente {
         Coordenadas coordenadasLlegada = new Coordenadas(llegadaX,llegadaY);
         int cantidadDePasajeros = Scanner.getInt("Cuantos pasajeros van a viajar: ");
         double distancia = Math.sqrt(Math.pow(salidaX-llegadaX,2)+Math.pow(salidaY-llegadaY,2));
-        double costo = (distancia/100)+ 15; //multiplicado por el costo de imagen
+        double precio = (distancia/100)+ 15; //multiplicado por el costo de imagen
+        this.costo = precio;
     }
 
     public long getDni(){
@@ -32,6 +34,10 @@ public class Cliente {
 
     public String getName(){
         return name;
+    }
+
+    public double getCosto(){
+        return costo;
     }
 
     public static long getTarjeta(){

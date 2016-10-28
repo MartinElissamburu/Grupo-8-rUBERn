@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by Tincho on 21-Oct-16.
@@ -6,12 +7,13 @@ import java.util.ArrayList;
 public class MenuPrincipal extends Formulario {
     private ArrayList<Chofer> choferes;
     private ArrayList<Cliente> clientes;
+    private ArrayList<Factura> facturas;
 
-    public MenuPrincipal(ArrayList<Chofer> choferes, ArrayList<Cliente> clientes){
+    public MenuPrincipal(ArrayList<Chofer> choferes, ArrayList<Cliente> clientes,ArrayList<Factura> facturas){
         this.choferes = choferes;
         this.clientes = clientes;
+        this.facturas = facturas;
     }
-    @Override
 
     protected void displayContent() throws Exception {
         clearScreen();
@@ -22,12 +24,20 @@ public class MenuPrincipal extends Formulario {
                     "1. Realizar un viaje\n" +
                     "2. Menu Choferes\n" +
                     "3. Menu Usuarios\n" +
-                    "4. Salir\n" );
+                    "4. Imprimir facturas\n" +
+                    "5. Salir\n" );
             String impresion = null;
             int impresion2 = 888888;
             int j = Scanner.getInt("Que operación desea realizar: ");
             switch (j) {
                 case 1:
+                    long documentoCliente = Scanner.getLong("Ingrese el documento del pasajero: ");
+                    for(int e = 0; e < clientes.size(); e++){
+                        if(clientes.get(e).getDni() == documentoCliente){
+                            clientes.get(e).pedirViaje();
+                            Factura factura = new Factura(clientes.get(e).getCosto(),facturas);
+                        }
+                    }
                     //preguntar con que cliente desea viajar y crear el algoritmo de busqueda de viaje, podria ser otro metodo
                     //al final del viaje se crea una nueva factura
                     impresion = "nada";
@@ -40,12 +50,16 @@ public class MenuPrincipal extends Formulario {
                     impresion2 = 9999999;
                     break;
                 case 3:
-                    new MenuUsuarios().displayTitle();
-                    new MenuUsuarios().displayContent();
+                    new MenuUsuarios(clientes).displayTitle();
+                    new MenuUsuarios(clientes).displayContent();
                     impresion = "nada";
                     impresion2 = 9999999;
                     break;
                 case 4:
+                    for(int l = 0; l < facturas.size(); l++){
+                        facturas.get(l).imprimirFacturas();
+                    }
+                case 5:
                     impresion = "Gracias por utilizar rUBERn";
                     impresion2 = 9999999;
                     break;
@@ -79,7 +93,7 @@ public class MenuPrincipal extends Formulario {
         }
     }
 
-    @Override
+
     protected void displayTitle() {
         System.out.println("Bienvenido a rUBERn");
     }
