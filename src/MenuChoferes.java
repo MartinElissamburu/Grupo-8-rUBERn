@@ -51,7 +51,11 @@ public class MenuChoferes {
                 for(int k = 0; k < choferes.size(); k++){
                     if(choferes.get(k).getDni() == choferABorrar){
                         choferes.remove(k);
-                        //hacer un try and catch en caso que el dni que nos pase no corresponda a ningun chofer
+                        try {
+                            choferes.get(k).getDni();
+                        } catch (Exceptions.DniNoValidoException dniNoExiste){
+                            throw new Exceptions.DniNoValidoException(choferes.get(k).getDni());
+                        }
                     }
                 }
                 break;

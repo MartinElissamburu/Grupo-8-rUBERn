@@ -5,14 +5,12 @@ public class Cliente {
     private String name;
     private long dni;
     private static TarjetaDeCredito tarjeta;
-    private long numeroClientes = 0; //?
     private double costo;
 
     public Cliente() throws Exception {
         name = Scanner.getString("Nombre del usuario: ");
         dni = Scanner.getLong("Dni del usuario: ");
         this.tarjeta = new TarjetaDeCredito();
-        numeroClientes ++;
     }
 
     public void pedirViaje(){
@@ -25,7 +23,7 @@ public class Cliente {
         int cantidadDePasajeros = Scanner.getInt("Cuantos pasajeros van a viajar: ");
         double distancia = Math.sqrt(Math.pow(salidaX-llegadaX,2)+Math.pow(salidaY-llegadaY,2));
         double precio = (distancia/100)+ 15; //multiplicado por el costo de imagen
-        //
+        System.out.println("El precio de este viaje va a ser de :" + costo);
         this.costo = precio;
     }
 

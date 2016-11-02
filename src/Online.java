@@ -1,3 +1,5 @@
+import Exceptions.AlreadyOfflineException;
+
 /**
  * Created by Florencia on 10/23/16.
  */
@@ -8,8 +10,12 @@ public class Online implements EstadoChofer {
         this.chofer = c;
     }
 
-    public void goOnline() throws Exception {
-        throw new Exception("Ya esta online");
+    public void goOnline() {
+        try {
+            new Online(chofer);
+        } catch (AlreadyOfflineException.AlreadyOnlineException onlineException){
+            throw new AlreadyOfflineException.AlreadyOnlineException();
+        }
     }
 
     public void goOffline(){
