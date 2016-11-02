@@ -17,7 +17,11 @@ public class Working implements EstadoChofer {
 
     public void goOffline() {
         try {
-            new Working(chofer);
+            if (chofer.getEstado() instanceof Working){
+                throw new CantGoOfflineException();
+            }else{
+                new Working(chofer);
+            }
         } catch (CantGoOfflineException cantGoOffline){
             throw new CantGoOfflineException();
         }
@@ -25,7 +29,11 @@ public class Working implements EstadoChofer {
 
     public void goWorking() {
         try{
-            new Working(chofer);
+            if (chofer.getEstado() instanceof Working) {
+                throw new AlreadyWorkingException();
+            }else {
+                new Working(chofer);
+            }
         } catch (AlreadyWorkingException workingException){
             throw new AlreadyWorkingException();
         }

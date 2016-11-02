@@ -1,4 +1,5 @@
-import Exceptions.AlreadyOfflineException;
+
+import Exceptions.AlreadyOnlineException;
 
 /**
  * Created by Florencia on 10/23/16.
@@ -12,9 +13,13 @@ public class Online implements EstadoChofer {
 
     public void goOnline() {
         try {
-            new Online(chofer);
-        } catch (AlreadyOfflineException onlineException){
-            throw new AlreadyOfflineException();
+            if (chofer.getEstado() instanceof Online){
+                throw new AlreadyOnlineException();
+            }else{
+                new Online(chofer);
+            }
+        } catch (AlreadyOnlineException onlineException){
+            throw new AlreadyOnlineException();
         }
     }
 

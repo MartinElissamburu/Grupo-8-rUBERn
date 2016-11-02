@@ -1,4 +1,5 @@
 import Exceptions.AlreadyOfflineException;
+import Exceptions.CantGoWorkingException;
 
 /**
  * Created by Florencia on 10/23/16.
@@ -16,14 +17,26 @@ public class Offline implements EstadoChofer {
 
     public void goOffline(){
         try {
-            new Offline(chofer);
-        } catch (AlreadyOfflineException offlineException) {
+            if (chofer.getEstado() instanceof Offline){
+                throw new AlreadyOfflineException();
+            }else{
+                new Offline(chofer);
+            }
+        } catch (AlreadyOfflineException onlineException){
             throw new AlreadyOfflineException();
         }
-        //hacer try and catch en todas las clases
+        //Fijarse si esta bien la exception que tira
     }
 
-    public void goWorking(){
-        chofer.setEstado(new Working(chofer));
+    public void goWorking() {
+        try {
+            if (chofer.getEstado() instanceof Offline) {
+                throw new CantGoWorkingException();
+            } else {
+                new Working(chofer);
+            }
+        } catch (CantGoWorkingException cantGoOffline) {
+            throw new CantGoWorkingException();
+        }
     }
 }
