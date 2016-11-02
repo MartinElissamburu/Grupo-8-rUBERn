@@ -23,7 +23,7 @@ public class Chofer {
         this.tarjeta = new TarjetaDeCredito();
         isAvailable = true;
         auto = new Auto();
-        estado = new Offline(this);
+        estado = new Online(this);
     }
 
     public void setEstado(EstadoChofer nuevoEstado){
@@ -33,6 +33,12 @@ public class Chofer {
     public Coordenadas actualizarCoordenadas(long newX, long newY){
         coordenadas = new Coordenadas(newX,newY);
         return coordenadas;
+    }
+
+    public double calcularViaje(Coordenadas coorSalida, Coordenadas coorLlegada){
+        double distancia = Math.sqrt(Math.pow(coorSalida.ejeX-coorLlegada.ejeX,2)+Math.pow(coorSalida.ejeY-coorLlegada.ejeY,2));
+        double costo = (distancia/100)+15;
+        return costo;
     }
 
     public String getName(){
@@ -55,7 +61,19 @@ public class Chofer {
         return auto.getTipoDeAuto();
     }
 
-    public String getEstado(){
+    public Coordenadas getCoordenadas(){
+        return coordenadas;
+    }
+
+    public Auto getAuto() {
+        return auto;
+    }
+
+    public EstadoChofer getEstado(){
+        return estado;
+    }
+
+    public String getEstadoString(){
         return estado.toString();
     }
 

@@ -33,7 +33,7 @@ public class MenuChoferes {
                 break;
             case 2:
                 for(int k = 0; k < choferes.size(); k++){
-                    System.out.println(choferes.get(k).getEstado());
+                    System.out.println(choferes.get(k).getEstadoString());
                 }
                 i = 0;
                 break;

@@ -13,8 +13,8 @@ public class Online implements EstadoChofer {
     public void goOnline() {
         try {
             new Online(chofer);
-        } catch (AlreadyOfflineException.AlreadyOnlineException onlineException){
-            throw new AlreadyOfflineException.AlreadyOnlineException();
+        } catch (AlreadyOfflineException onlineException){
+            throw new AlreadyOfflineException();
         }
     }
 

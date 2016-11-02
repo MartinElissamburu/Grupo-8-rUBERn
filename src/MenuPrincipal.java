@@ -32,12 +32,28 @@ public class MenuPrincipal extends Formulario {
             switch (j) {
                 case 1:
                     long documentoCliente = Scanner.getLong("Ingrese el documento del pasajero: ");
-                    for(int e = 0; e < clientes.size(); e++){
+
+                    new PedirViaje(choferes, clientes, documentoCliente);
+                    /*for(int e = 0; e < clientes.size(); e++){
                         if(clientes.get(e).getDni() == documentoCliente){
                             clientes.get(e).pedirViaje();
+                            int cantidadDePasajeros = Scanner.getInt("Cuantos pasajeros van a viajar: ");
+                            ArrayList<Chofer> choferesOnline = new ArrayList<>();
+                            ArrayList<Chofer> choferesAptos = new ArrayList<>();
+                            for(int g = 0; g < choferes.size(); g++){
+                                if(choferes.get(g).getEstado().equals("Online")){
+                                    choferesOnline.add(choferes.get(g));
+                                }
+                            }
+                            for(int f = 0; f < choferesOnline.size(); f++){
+                                if(choferesOnline.get(f).getAuto().getCapacidad() >= cantidadDePasajeros){
+                                    choferesAptos.add(choferes.get(f));
+                                }
+                            }
+
                             Factura factura = new Factura(clientes.get(e).getCosto(),facturas);
                         }
-                    }
+                    }*/
                     //preguntar con que cliente desea viajar y crear el algoritmo de busqueda de viaje, podria ser otro metodo
                     //al final del viaje se crea una nueva factura
                     impresion = "nada";

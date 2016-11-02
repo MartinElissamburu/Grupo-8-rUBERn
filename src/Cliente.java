@@ -20,10 +20,9 @@ public class Cliente {
         double llegadaY = Scanner.getDouble("Punto de llegada Eje Y: ");
         Coordenadas coordenadasSalida = new Coordenadas(salidaX,salidaY);
         Coordenadas coordenadasLlegada = new Coordenadas(llegadaX,llegadaY);
-        int cantidadDePasajeros = Scanner.getInt("Cuantos pasajeros van a viajar: ");
         double distancia = Math.sqrt(Math.pow(salidaX-llegadaX,2)+Math.pow(salidaY-llegadaY,2));
-        double precio = (distancia/100)+ 15; //multiplicado por el costo de imagen
-        System.out.println("El precio de este viaje va a ser de :" + costo);
+        double precio = (distancia/100)+ 15;
+        System.out.println("El precio de este viaje va a ser de :" + precio);
         this.costo = precio;
     }
 
