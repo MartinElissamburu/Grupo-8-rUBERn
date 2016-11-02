@@ -23,7 +23,7 @@ public class Working implements EstadoChofer {
                 new Working(chofer);
             }
         } catch (CantGoOfflineException cantGoOffline){
-            throw new CantGoOfflineException();
+            System.out.println("El chofer no puede pasar de trabajando a offline");
         }
     }
 
@@ -35,7 +35,7 @@ public class Working implements EstadoChofer {
                 new Working(chofer);
             }
         } catch (AlreadyWorkingException workingException){
-            throw new AlreadyWorkingException();
+            System.out.println("Este chofer ya esta trabajando");
         }
     }
 }

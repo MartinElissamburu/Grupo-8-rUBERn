@@ -1,3 +1,5 @@
+import Exceptions.InvalidCreditCardNumber;
+
 /**
  * Created by Tincho on 12-Oct-16.
  */
@@ -14,12 +16,12 @@ public class TarjetaDeCredito {
                 numeroIn = true;
                 if (creditNumber1.length() != 16){
 
-                    throw new RuntimeException("Numero de Tarjeta invalido, debe tener 16 digitos");
+                    throw new InvalidCreditCardNumber();
                 }else{
                     this.creditNumber = creditNumber;
                     numeroIn = false;
                 }
-            }catch(RuntimeException e){
+            }catch(InvalidCreditCardNumber e){
                 System.out.println("Numero de tarjeta invalido, debe tener 16 digitos");
 
             }

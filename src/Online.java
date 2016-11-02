@@ -19,7 +19,7 @@ public class Online implements EstadoChofer {
                 new Online(chofer);
             }
         } catch (AlreadyOnlineException onlineException){
-            throw new AlreadyOnlineException();
+            System.out.println("Este chofer ya esta online");
         }
     }
 

@@ -23,7 +23,7 @@ public class Offline implements EstadoChofer {
                 new Offline(chofer);
             }
         } catch (AlreadyOfflineException onlineException){
-            throw new AlreadyOfflineException();
+            System.out.println("Este chofer ya esta offline");
         }
         //Fijarse si esta bien la exception que tira
     }
@@ -36,7 +36,7 @@ public class Offline implements EstadoChofer {
                 new Working(chofer);
             }
         } catch (CantGoWorkingException cantGoOffline) {
-            throw new CantGoWorkingException();
+            System.out.println("El chofer no puede pasar de trabajando a offline");
         }
     }
 }
