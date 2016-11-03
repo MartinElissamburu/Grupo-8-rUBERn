@@ -1,3 +1,5 @@
+import Exceptions.OpcionInvalida;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -5,7 +7,7 @@ import java.util.ArrayList;
  * Created by Tincho on 27-Oct-16.
  */
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, OpcionInvalida {
 
         CrearChoferes choferes = new CrearChoferes();
         CrearUsuarios usuarios = new CrearUsuarios();

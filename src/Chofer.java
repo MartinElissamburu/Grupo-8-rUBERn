@@ -74,12 +74,24 @@ public class Chofer {
     }
 
     public String getEstadoString(){
-        return estado.toString();
+        if (estado instanceof Online){
+            return "Online";
+        }else if (estado instanceof Offline){
+            return "Offline";
+        }else{
+            return "Working";
+        }
     }
 
     public void getDatos(){
-        System.out.println(this.getName());
-        System.out.println(this.getDni());
-        System.out.println(this.getTarjeta());
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("Nombre: " + this.getName());
+        System.out.println("Dni: " + this.getDni());
+        System.out.println("Numero de tarjeta: " + this.getTarjeta());
+        System.out.println("---------------------------------------------------------------");
+    }
+
+    public void setCoordenadas(Coordenadas coordenadas) {
+        this.coordenadas = coordenadas;
     }
 }

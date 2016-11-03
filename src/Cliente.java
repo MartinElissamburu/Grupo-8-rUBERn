@@ -43,9 +43,11 @@ public class Cliente {
     }
 
     public void getDatos(){
-        System.out.println(this.getName());
-        System.out.println(this.getDni());
-        System.out.println(this.getTarjeta());
+        System.out.println("----------------------------------------------------------------");
+        System.out.println("Nombre: " + this.getName());
+        System.out.println("Dni: " + this.getDni());
+        System.out.println("Numero de tarjeta: " + this.getTarjeta());
+        System.out.println("----------------------------------------------------------------");
     }
 
     @Override

@@ -7,7 +7,7 @@ public class CrearChoferes {
     ArrayList<Chofer> choferes = new ArrayList<>();
 
     public CrearChoferes() throws Exception {
-        int cantidadChoferes = Scanner.getInt("Cuantos Choferes desea: ");
+        int cantidadChoferes = Scanner.getInt("Cuantos choferes desea: ");
         for (int i = 0; i<cantidadChoferes; i++){
             Chofer chofer = new Chofer();
             choferes.add(i, chofer);

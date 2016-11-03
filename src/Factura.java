@@ -16,7 +16,7 @@ public class Factura {
     monto (positivo o negativo dependiendo si es pago o cobro)
      */
 
-    private int numeroDeTransaccion;
+    private int numeroDeTransaccion = 0;
     private String tipoDeOperacion;
     private String fecha;
     private long tarjetaDeCredito;
@@ -24,24 +24,23 @@ public class Factura {
     private double costo;
     private ArrayList<Factura> facturas;
 
-    public Factura(double costo, ArrayList<Factura> facturas){
-        numeroDeTransaccion = 0;
-        if(costo > 0){ //cobro, uber gana plata
-            tipoDeOperacion = "Cobro";
-        } else {
-            tipoDeOperacion = "Pago";
-        }
+
+    public Factura(double costo, ArrayList<Factura> facturas, Chofer chofer){
+
+        tipoDeOperacion = "Pago";
         fecha = this.getFecha();
-        if(tipoDeOperacion.equals("Cobro")){
-            tarjetaDeCredito = Cliente.getTarjeta();
-        } else {
-            tarjetaDeCredito = Chofer.getTarjeta();
-        }
-        if(tipoDeOperacion.equals("Cobro")){
-            descripcion = "Cobro a un cliente por un viaje";
-        } else {
-            descripcion = "Pago a un chofer por un viaje";
-        }
+        tarjetaDeCredito = chofer.getTarjeta();
+        descripcion = "Pago a un chofer por un viaje";
+        this.costo = -(costo * 0.9);
+        numeroDeTransaccion++;
+        this.facturas = facturas;
+        facturas.add(this);
+    }
+    public Factura(double costo, ArrayList<Factura> facturas, Cliente cliente){
+        tipoDeOperacion = "Cobro";
+        fecha = this.getFecha();
+        tarjetaDeCredito = cliente.getTarjeta();
+        descripcion = "Cobro a un cliente por un viaje";
         this.costo = costo;
         numeroDeTransaccion++;
         this.facturas = facturas;
