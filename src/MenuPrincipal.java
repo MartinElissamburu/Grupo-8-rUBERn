@@ -28,7 +28,6 @@ public class MenuPrincipal extends Formulario {
                     "2. Menu Choferes\n" +
                     "3. Menu Usuarios\n" +
                     "4. Imprimir facturas\n" +
-                    //nuevo tipo de auto
                     "5. Salir\n" );
             String impresion = null;
             int impresion2 = 888888;
