@@ -49,12 +49,14 @@ public class Factura {
 
     public void imprimirFacturas(){
         for(int i = 0; i < facturas.size(); i++){
-            System.out.println(facturas.get(i).numeroDeTransaccion);
-            System.out.println(facturas.get(i).tipoDeOperacion);
-            System.out.println(facturas.get(i).fecha);
-            System.out.println(facturas.get(i).tarjetaDeCredito);
-            System.out.println(facturas.get(i).descripcion);
-            System.out.println(facturas.get(i).costo);
+            System.out.println("-------------------------------------");
+            System.out.println("Numero de transaccion: " + facturas.get(i).numeroDeTransaccion);
+            System.out.println("Tipo de operacion: " + facturas.get(i).tipoDeOperacion);
+            System.out.println("Fecha: " + facturas.get(i).fecha);
+            System.out.println("Tarjeta de credito: " + facturas.get(i).tarjetaDeCredito);
+            System.out.println("Descripcion: " + facturas.get(i).descripcion);
+            System.out.println("Costo: " + facturas.get(i).costo);
+            System.out.println("-------------------------------------");
         }
     }
 

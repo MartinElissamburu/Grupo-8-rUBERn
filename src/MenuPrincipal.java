@@ -35,12 +35,14 @@ public class MenuPrincipal extends Formulario {
             int j = Scanner.getInt("Que operación desea realizar: ");
             switch (j) {
                 case 1:
-                    System.out.println(clientes.toString());
+                    for (int i =0; i < clientes.size(); i++){
+                        clientes.get(i).getDatos();
+                    }
                     long documentoCliente = Scanner.getLong("Ingrese el documento del pasajero: ");
 
                     PedirViaje a = new PedirViaje(choferes, clientes, documentoCliente);
                     facturas.add(a.getFacturaChofer());
-                    facturas.add(a.getFacturaUsuario());
+                    //facturas.add(a.getFacturaUsuario());
                     impresion = "nada";
                     impresion2 = 9999999;
                     break;
@@ -62,6 +64,8 @@ public class MenuPrincipal extends Formulario {
                     for(int l = 0; l < facturas.size(); l++){
                         facturas.get(l).imprimirFacturas();
                     }
+                    impresion = "nada";
+                    break;
                 case 5:
                     impresion = "Gracias por utilizar rUBERn";
                     impresion2 = 9999999;
@@ -85,7 +89,7 @@ public class MenuPrincipal extends Formulario {
             if (menu){
                 int limpiar = Scanner.getInt("Si desea limpiar la consola ingrese 1, si desea que la consola quede sin limpiar ingrese 2 y si desea salir ingrese 3: ");
                 if (limpiar == 1){
-                    clearScreen();
+                    System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
                 }
                 else if(limpiar == 3){
                     System.out.println("Gracias por usar este programa");
@@ -101,7 +105,7 @@ public class MenuPrincipal extends Formulario {
 
     protected void displayTitle() {
         clearScreen();
-        System.out.println("Bienvenido a rUBERn");
+        System.out.println("\n" + "Bienvenido a rUBERn");
 
     }
 }

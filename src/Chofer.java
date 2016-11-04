@@ -10,7 +10,7 @@ public class Chofer {
     private boolean isAvailable;
     private double ejeX;
     private double ejeY;
-    private Coordenadas coordenadas = new Coordenadas(ejeX,ejeY);
+    private Coordenadas coordenadas;
     private Auto auto;
     private EstadoChofer estado;
 
@@ -20,6 +20,7 @@ public class Chofer {
         dni = Scanner.getLong("Numero de documento: ");
         ejeX = Scanner.getDouble("Coordenadas en x: ");
         ejeY = Scanner.getDouble("Coordenadas en y: ");
+        coordenadas = new Coordenadas(ejeX,ejeY);
         this.tarjeta = new TarjetaDeCredito();
         isAvailable = true;
         auto = new Auto();
@@ -41,6 +42,11 @@ public class Chofer {
         return costo;
     }
 
+    public double calcularDistancia(Coordenadas coorSalida, Coordenadas coorLlegada){
+        double distancia = Math.sqrt(Math.pow(coorSalida.ejeX-coorLlegada.ejeX,2)+Math.pow(coorSalida.ejeY-coorLlegada.ejeY,2));
+        return distancia;
+    }
+
     public String getName(){
         return name;
     }
@@ -53,9 +59,9 @@ public class Chofer {
         return tarjeta.getCreditNumber();
     }
 
-    public double getCapacidad(){
+    /*public double getCapacidad(){
         return auto.getCapacidad();
-    }
+    }*/
 
     public double getTipoDeAuto(){
         return auto.getTipoDeAuto();

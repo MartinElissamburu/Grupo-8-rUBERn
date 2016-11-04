@@ -40,4 +40,8 @@ public class Auto {
     public int getTipoDeAuto(){
         return tipoDeAuto;
     }
+
+    public double getCostoAdicional(){
+        return costoAdicional;
+    }
 }
