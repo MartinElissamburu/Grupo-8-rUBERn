@@ -18,7 +18,7 @@ public class PedirViaje {
     private Coordenadas coordLlegada;
     private long documentoCliente;
     private boolean viajePendiente = true;
-    private Cliente viajador;
+    private Cliente viajero;
     private Chofer conductor;
 
     public PedirViaje(ArrayList<Chofer> choferes, ArrayList<Cliente> clientes, long documentoCliente) throws Exception {
@@ -32,7 +32,7 @@ public class PedirViaje {
             for (int e = 0; e < clientes.size(); e++){
                 try {
                     if (clientes.get(e).getDni() == documentoCliente){
-                        viajador = clientes.get(e);
+                        viajero = clientes.get(e);
                     }else {
                         throw new OpcionInvalida();
                     }
@@ -48,9 +48,9 @@ public class PedirViaje {
             Coordenadas coordenadasSalida = new Coordenadas(salidaX,salidaY);
             Coordenadas coordenadasLlegada = new Coordenadas(llegadaX,llegadaY);
             double distancia = Math.sqrt(Math.pow(salidaX-llegadaX,2) + Math.pow(salidaY-llegadaY,2));
-            double precio = (distancia/100)+ 15;
-            costo = precio;
-            System.out.println("El precio de este viaje va a ser de :" + precio);
+            double precio = (distancia/10)+ 15;
+            costo = (float) precio;
+            System.out.println("El precio de este viaje va a ser de :" + costo);
             int cantidadDePasajeros = Scanner.getInt("Cuantos pasajeros van a viajar: ");
             ArrayList<Chofer> choferesOnline = new ArrayList<>();
             for (int g = 0; g < choferes.size(); g++) {
@@ -61,9 +61,18 @@ public class PedirViaje {
             for (int f = 0; f < choferesOnline.size(); f++) {
                 if (choferesOnline.get(f).getAuto().getCapacidad() >= cantidadDePasajeros) {
                     choferesAptos.add(choferesOnline.get(f));
+                } else if(choferesAptos.size()+1 == 0){
+                    System.out.println("Disculpe no tenemos choferes para este viaje");
+                    break;
                 }
             }
-            sort(choferesAptos, coordenadasSalida);
+            sort(choferesAptos, coordenadasLlegada);
+            ArrayList<Chofer> choferesPosibles = new ArrayList<>();
+            for(int w = 0; w < choferesPosibles.size(); w++){
+                if(choferesPosibles.get(w).calcularViaje(choferesPosibles.get(w).getCoordenadas(),coordenadasLlegada) < 50){
+                    choferesAptos.add(choferesPosibles.get(w));
+                }
+            }
             for (int f = 0; f < choferesAptos.size(); f++){
                 int respuesta = Scanner.getInt("Chofer " + choferesAptos.get(f).getName() + ", deseas aceptar un viaje? (1 si, 2 no): "); // try and catch
                 if (f+1 > choferesAptos.size()){
@@ -74,16 +83,19 @@ public class PedirViaje {
                             choferesAptos.get(f).setEstado(new Working(choferesAptos.get(f)));
                             choferesAptos.get(f).setCoordenadas(coordenadasLlegada);
                             conductor = choferesAptos.get(f);
+                            System.out.println("Viaje en curso con " + choferesAptos.get(f).getName());
                             break;
-                        } else if (respuesta != 2){
-                            throw new OpcionInvalida();
-                        }
+                        } else if(respuesta == 2){
+                            f++;
+                        } //else if (){
+                            //throw new OpcionInvalida();
+                        //}
                     }catch (OpcionInvalida opcionInvalida) {
                         System.out.println("Opcion invalida");
                     }
                 }
             }
-            Factura factura = new Factura(costo,facturas,viajador);
+            Factura factura = new Factura(costo,facturas,viajero);
             Factura factura1 = new Factura(costo, facturas, conductor);
             this.factura = factura;
             this.factura1 = factura1;

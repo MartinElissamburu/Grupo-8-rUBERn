@@ -124,7 +124,7 @@ public class MenuChoferes {
                 default:
 
             }
-            int borrar = Scanner.getInt("Si desea limpiar la pantalla ingrese 1, en caso de no querer limpiar lo que quiera: ");
+            int borrar = Scanner.getInt("Si desea limpiar la pantalla ingrese 1, en caso de no querer limpiar oprima cualquier tecla: ");
 
             if (borrar == 1){
                 System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");

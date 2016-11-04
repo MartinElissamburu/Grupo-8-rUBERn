@@ -14,7 +14,7 @@ public class Main {
 
         ArrayList<Chofer> arregloChoferes = choferes.getChoferes();
         ArrayList<Cliente> arregloClientes = usuarios.getClientes();
-        ArrayList<Factura> arregloFacturas = new ArrayList<Factura>();
+        ArrayList<Factura> arregloFacturas = new ArrayList<>();
 
         new MenuPrincipal(arregloChoferes,arregloClientes,arregloFacturas).displayTitle();
         new MenuPrincipal(arregloChoferes,arregloClientes,arregloFacturas).displayContent();

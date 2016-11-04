@@ -21,7 +21,7 @@ public class Cliente {
         Coordenadas coordenadasSalida = new Coordenadas(salidaX,salidaY);
         Coordenadas coordenadasLlegada = new Coordenadas(llegadaX,llegadaY);
         double distancia = Math.sqrt(Math.pow(salidaX-llegadaX,2)+Math.pow(salidaY-llegadaY,2));
-        double precio = (distancia/100)+ 15;
+        double precio = (distancia/10)+ 15;
         System.out.println("El precio de este viaje va a ser de :" + precio);
         this.costo = precio;
     }
@@ -54,7 +54,7 @@ public class Cliente {
     public String toString() {
         String name = this.name;
         String dni = String.valueOf(this.dni);
-        String tarjetaCredito = String.valueOf(this.tarjeta);
+        String tarjetaCredito = String.valueOf(this.tarjeta.getCreditNumber());
         String cliente = "Nombre: " + name + "\n" + "Dni: " + dni + "\n" + "Numero de Tarjeta de Credito: " + tarjetaCredito + "\n";
         return cliente;
     }
