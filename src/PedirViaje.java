@@ -31,12 +31,13 @@ public class PedirViaje {
         if (size != 0){
             for (int e = 0; e < clientes.size(); e++){
                 try {
-                    if (clientes.get(e).getDni() == documentoCliente){
+                    if (clientes.get(e).getDni() == documentoCliente) {
                         viajero = clientes.get(e);
-                    }else {
+                        b = false;
+                    } else {
                         throw new OpcionInvalida();
                     }
-                }catch (OpcionInvalida o){
+                } catch (OpcionInvalida o) {
                     System.out.println("No hay usuario con este documento");
                 }
             }
@@ -83,10 +84,10 @@ public class PedirViaje {
                             choferesAptos.get(f).setEstado(new Working(choferesAptos.get(f)));
                             choferesAptos.get(f).setCoordenadas(coordenadasLlegada);
                             conductor = choferesAptos.get(f);
-                            System.out.println("Viaje en curso con " + choferesAptos.get(f).getName());
+                            System.out.println("Viaje en curso con chofer" + choferesAptos.get(f).getName());
                             break;
                         } else if(respuesta == 2){
-                            f++;
+
                         } //else if (){
                             //throw new OpcionInvalida();
                         //}
