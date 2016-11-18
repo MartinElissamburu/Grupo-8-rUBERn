@@ -59,10 +59,6 @@ public class Chofer {
         return tarjeta.getCreditNumber();
     }
 
-    /*public double getCapacidad(){
-        return auto.getCapacidad();
-    }*/
-
     public double getTipoDeAuto(){
         return auto.getTipoDeAuto();
     }

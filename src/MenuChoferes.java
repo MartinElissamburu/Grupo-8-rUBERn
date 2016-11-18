@@ -80,8 +80,8 @@ public class MenuChoferes {
                         int choferGoOffline = Scanner.getInt("Escriba el documento del chofer a desconectar (en caso de no " +
                                 "haber chofer con este documento volvera al menu anterior): ");
                         for (int k = 0; k < choferes.size(); k++) {
-                            if (choferes.get(k).getDni() == choferGoOffline) {
-                                choferes.get(k).setEstado(new Offline(choferes.get(k)));
+                            if (choferes.get(k).getDni() == choferGoOffline){
+                                choferes.get(k).getEstado().goOffline();
                             }
                         }
                     }else{
@@ -94,7 +94,7 @@ public class MenuChoferes {
                                 "haber chofer con este documento volvera al menu anterior): ");
                         for (int k = 0; k < choferes.size(); k++) {
                             if (choferes.get(k).getDni() == choferGoOnline) {
-                                choferes.get(k).setEstado(new Online(choferes.get(k)));
+                                choferes.get(k).getEstado().goOnline();
                             }
                         }
                     }else {
@@ -107,8 +107,9 @@ public class MenuChoferes {
                                 "haber chofer con este documento volvera al menu anterior): ");
                         for (int k = 0; k < choferes.size(); k++) {
                             if (choferes.get(k).getDni() == choferFinViaje) {
-                                if (choferes.get(k).getEstado().equals("Working")) {
+                                if (choferes.get(k).getEstado() instanceof Working) {
                                     choferes.get(k).setEstado(new Online(choferes.get(k)));
+                                    System.out.println(choferes.get(k).getName() + " finalizo su viaje");
                                 } else {
                                     System.out.println("Este chofer no esta en viaje");
                                 }

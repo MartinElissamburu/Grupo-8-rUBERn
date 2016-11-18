@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="rUBERn:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/rUBERn_jar</output-path>
+    <root id="archive" name="rUBERn.jar">
+      <element id="module-output" name="rUBERn" />
+    </root>
+  </artifact>
+</component>
